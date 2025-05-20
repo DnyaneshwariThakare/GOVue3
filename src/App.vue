@@ -24,14 +24,15 @@ import axios from 'axios'
 const users = ref([])
 const name = ref('')
 const email = ref('')
-
+const baseURL = import.meta.env.VITE_API_BASE_URL;
+// axios.get(`${baseURL}/api/users`);
 const getUsers = async () => {
-  const res = await axios.get('/server/api/users')
+  const res = await axios.get(`${baseURL}/api/users`)
   users.value = res.data
 }
 
 const addUser = async () => {
-  await axios.post('/server/api/users', {
+  await axios.post(`${baseURL}/api/users`, {
     name: name.value,
     email: email.value
   })
@@ -41,7 +42,7 @@ const addUser = async () => {
 }
 
 const deleteUser = async (id) => {
-  await axios.delete(`/server/users?id=${id}`)
+  await axios.delete(`${baseURL}/users?id=${id}`)
   getUsers()
 }
 
