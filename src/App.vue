@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>User Management</h1>
-
+    <h2>Updated with push</h2>
     <form @submit.prevent="addUser">
       <input v-model="name" placeholder="Name" required />
       <input v-model="email" placeholder="Email" required />
