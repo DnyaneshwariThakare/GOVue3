@@ -42,7 +42,7 @@ const addUser = async () => {
 }
 
 const deleteUser = async (id) => {
-  await axios.delete(`${baseURL}/users?id=${id}`)
+  await axios.delete(`${baseURL}/api/users?id=${id}`)
   getUsers()
 }
 
